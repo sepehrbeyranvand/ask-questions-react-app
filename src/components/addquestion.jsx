@@ -18,7 +18,6 @@ export default function Addquestion() {
 
   const sendForm = async (e) => {
     e.preventDefault();
-    setTags(tags.match(/[^ ,]+/g).join(','))
     const doc = { title, tags, describe };
     try {
       const ref = collection(db, "first");
@@ -50,6 +49,7 @@ export default function Addquestion() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
+              spellCheck={"false"}
             />
           </div>
           <div className="flex flex-col mx-12">
@@ -60,6 +60,8 @@ export default function Addquestion() {
               value={tags}
               onChange={(e) => setTags(e.target.value)}
               required
+              spellCheck={"false"}
+
             />
           </div>
         </div>
@@ -71,6 +73,8 @@ export default function Addquestion() {
             value={describe}
             onChange={(e) => setDescribe(e.target.value)}
             required
+            spellCheck={"false"}
+
           ></textarea>
         </div>
         <div className="flex justify-between items-center w-[50vw] mt-10">

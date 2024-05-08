@@ -1,11 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
+import MainLogo from "../assets/logo.png";
 
 export default function NavBar() {
   return (
     <div>
       <nav className="grid grid-cols-12 p-3 items-center border-b border-neutral-300 shadow-md">
         <div className="col-span-3">
-          <Link className="text-2xl font-light" to="/">Ask Question</Link>
+          <Link className="text-2xl flex flex-col justify-center font-light" to="/">
+            <img className="size-10 rounded-full" src={MainLogo} alt="" />
+            <h2 className="text-xl font-light">Ask Question</h2>
+          </Link>
         </div>
         <div className="col-span-4">
           <input
@@ -15,8 +19,18 @@ export default function NavBar() {
           />
         </div>
         <div className="flex justify-center items-center col-span-5">
-          <NavLink to='/addQuestion' className="m-1">Ask a question</NavLink>
-          <NavLink to='/questions' className="m-1">Questions</NavLink>
+          <NavLink
+            to="/addQuestion"
+            className="m-1 hover:border-b-2 border-teal-700 p-1 transition .4s ease-in-out duration-200"
+          >
+            Ask a question
+          </NavLink>
+          <NavLink
+            to="/questions"
+            className="m-1  hover:border-b-2 border-teal-700 p-1 transition .4s ease-in-out duration-200"
+          >
+            Questions
+          </NavLink>
           <NavLink>Contact Us</NavLink>
           <NavLink className="m-1">
             <i className="fa fa-user-o"></i>
