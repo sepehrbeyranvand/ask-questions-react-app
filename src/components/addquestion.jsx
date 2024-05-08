@@ -18,6 +18,7 @@ export default function Addquestion() {
 
   const sendForm = async (e) => {
     e.preventDefault();
+    setTags(tags.match(/[^ ,]+/g).join(','))
     const doc = { title, tags, describe };
     try {
       const ref = collection(db, "first");

@@ -16,7 +16,7 @@ export default function NavBar() {
         </div>
         <div className="flex justify-center items-center col-span-5">
           <NavLink to='/addQuestion' className="m-1">Ask a question</NavLink>
-          <NavLink className="m-1">Questions</NavLink>
+          <NavLink to='/questions' className="m-1">Questions</NavLink>
           <NavLink>Contact Us</NavLink>
           <NavLink className="m-1">
             <i className="fa fa-user-o"></i>
