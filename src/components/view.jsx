@@ -13,7 +13,7 @@ export default function View() {
 
   useEffect(() => {
     setLoading(true);
-    const ref = doc(db, "first", id);
+    const ref = doc(db, "questions", id);
     onSnapshot(ref, (snapshot) => {
       setDocuments([snapshot.data()]);
       setLoading(false);

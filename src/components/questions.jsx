@@ -10,7 +10,7 @@ export default function Questions() {
 
   useEffect(() => {
     setLoading(true);
-    const ref = collection(db, "first");
+    const ref = collection(db, "questions");
     getDocs(ref).then((snapshot) => {
       if (snapshot.empty) {
         console.log("Error");
@@ -61,7 +61,7 @@ export default function Questions() {
               <div>
                 <p className="text-3xl">Title: {e.title}</p>
                 <p className="text-neutral-600">Tags: {e.tags}</p>
-                <p className="text-neutral-600">Describe: {e.describe}</p>
+                <p className="text-neutral-600">Describe: {e.shortDescribe}</p>
               </div>
               <div className="mt-6">
                 <Link type="button" to={`/view/${e.id}`} className="bg-neutral-200 block text-center rounded-md p-2 w-[30%] hover:bg-neutral-300 transition .4s ease-in-out duration-200">

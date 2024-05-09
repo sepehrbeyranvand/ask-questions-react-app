@@ -19,9 +19,9 @@ export default function Addquestion() {
 
   const sendForm = async (e) => {
     e.preventDefault();
-    const doc = { title, tags, describe };
+    const doc = { title, tags, describe, shortDescribe };
     try {
-      const ref = collection(db, "first");
+      const ref = collection(db, "questions");
       await addDoc(ref, doc);
       Swal.fire({
         position: "top-end",
@@ -65,7 +65,7 @@ export default function Addquestion() {
             />
           </div>
         </div>
-        <div className="flex flex-col mt-10 m-3 mx-12">
+        <div className="flex flex-col mt-10 mx-12">
           <label className="text-neutral-700 font-light">
             Short Description
           </label>
@@ -76,10 +76,9 @@ export default function Addquestion() {
             onChange={(e) => setShortDescribe(e.target.value)}
             required
             spellCheck={"false"}
-          >
-            </textarea>
+          ></textarea>
         </div>
-        <div className="flex flex-col mt-20">
+        <div className="flex flex-col mt-10">
           <label>Describe</label>
           <textarea
             className="resize-none rounded-md border border-1 border-slate-700 outline-none w-[50vw] p-2 "
