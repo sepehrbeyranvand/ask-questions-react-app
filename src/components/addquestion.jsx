@@ -15,6 +15,7 @@ export default function Addquestion() {
     setTitle("");
     setTags("");
     setDescribe("");
+    setShortDescribe('')
   };
 
   const sendForm = async (e) => {
@@ -70,7 +71,7 @@ export default function Addquestion() {
             Short Description
           </label>
           <textarea
-            className="border border-1 border-slate-600 rounded-sm outline-none p-[.46em] w-[46vw] resize-none"
+            className="border border-1 border-slate-600 rounded-sm outline-none p-[.2em] w-[46vw] resize-none"
             type="text"
             value={shortDescribe}
             onChange={(e) => setShortDescribe(e.target.value)}

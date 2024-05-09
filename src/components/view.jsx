@@ -9,8 +9,6 @@ export default function View() {
   const [documents, setDocuments] = useState([]);
   const { id } = useParams();
 
-
-
   useEffect(() => {
     setLoading(true);
     const ref = doc(db, "questions", id);
@@ -40,13 +38,13 @@ export default function View() {
               Subject: {e.title}
             </h1>
             <p className="text-sm text-gray-400 font-light">Tags: {e.tags}</p>
-            <div className=" border border-1 border-fuchsia-800 p-3 rounded-md w-[50%]">
-              <p className=" text-cyan-600 text-lg">{e.describe}</p>
+            <div className=" border border-1 border-fuchsia-800 p-5 rounded-md w-[60%] h-64 overflow-y-scroll">
+              <p className=" text-cyan-600 text-lg">{e.describe}<br/></p>
             </div>
             <hr className="w-[70%] mt-8" />
           </div>
         ))}
-        <LeaveComment/>
+        <LeaveComment />
       </div>
     </div>
   );
