@@ -1,6 +1,7 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
+import { Link } from "react-router-dom";
 
 export default function Questions() {
   const [items, setItems] = useState([]);
@@ -26,7 +27,7 @@ export default function Questions() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen text-3xl text-blue-400 animate-spin">
+      <div className="flex justify-center overflow-hidden items-center min-h-screen text-3xl text-blue-400 animate-spin">
         <i className="fa fa-refresh"></i>
       </div>
     );
@@ -63,9 +64,9 @@ export default function Questions() {
                 <p className="text-neutral-600">Describe: {e.describe}</p>
               </div>
               <div className="mt-6">
-                <button className="bg-neutral-200 rounded-md p-2 w-[30%] hover:bg-neutral-300 transition .4s ease-in-out duration-200">
+                <Link type="button" to={`/view/${e.id}`} className="bg-neutral-200 block text-center rounded-md p-2 w-[30%] hover:bg-neutral-300 transition .4s ease-in-out duration-200">
                   View
-                </button>
+                </Link>
               </div>
             </div>
           ))}

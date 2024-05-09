@@ -5,6 +5,7 @@ import Addquestion from './components/addquestion';
 import Questions from './components/questions';
 import Contact from './components/contact';
 import Account from './components/account';
+import View from './components/view';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/addQuestion' element={<Addquestion/>}/>
           <Route path='/questions' element={<Questions/>}/>
           <Route path='/contactUs' element={<Contact/>}/>
+          <Route path='/view/:id' element={<View/>}/>
           <Route path='/account' element={<Account/>}/>
         <Route path='*'/>
         </Routes>
