@@ -19,7 +19,7 @@ function App() {
           <Route path='/contactUs' element={<Contact/>}/>
           <Route path='/view/:id' element={<View/>}/>
           <Route path='/account' element={<Account/>}/>
-        <Route path='*'/>
+          <Route path='*'/>
         </Routes>
       </Router>
     </div>

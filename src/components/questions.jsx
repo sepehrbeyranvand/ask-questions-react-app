@@ -1,4 +1,4 @@
-import { collection, getDocs, orderBy } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { Link } from "react-router-dom";

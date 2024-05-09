@@ -7,6 +7,7 @@ export default function Addquestion() {
   //VARIABLES
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState("");
+  const [shortDescribe, setShortDescribe] = useState("");
   const [describe, setDescribe] = useState("");
 
   //FUNCTIONS
@@ -61,9 +62,22 @@ export default function Addquestion() {
               onChange={(e) => setTags(e.target.value)}
               required
               spellCheck={"false"}
-
             />
           </div>
+        </div>
+        <div className="flex flex-col mt-10 m-3 mx-12">
+          <label className="text-neutral-700 font-light">
+            Short Description
+          </label>
+          <textarea
+            className="border border-1 border-slate-600 rounded-sm outline-none p-[.46em] w-[46vw] resize-none"
+            type="text"
+            value={shortDescribe}
+            onChange={(e) => setShortDescribe(e.target.value)}
+            required
+            spellCheck={"false"}
+          >
+            </textarea>
         </div>
         <div className="flex flex-col mt-20">
           <label>Describe</label>
@@ -74,7 +88,6 @@ export default function Addquestion() {
             onChange={(e) => setDescribe(e.target.value)}
             required
             spellCheck={"false"}
-
           ></textarea>
         </div>
         <div className="flex justify-between items-center w-[50vw] mt-10">

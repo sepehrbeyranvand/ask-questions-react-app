@@ -2,11 +2,14 @@ import { doc, onSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { useParams } from "react-router-dom";
+import LeaveComment from "./leaveComment";
 
 export default function View() {
   const [loading, setLoading] = useState(false);
   const [documents, setDocuments] = useState([]);
   const { id } = useParams();
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -29,11 +32,21 @@ export default function View() {
     <div>
       <div>
         {documents.map((e, index) => (
-          <div key={index}>
-            <h1>{e.title}</h1>
-            <p>{e.describe}</p>
+          <div
+            className="flex flex-col justify-center items-center gap-10 mt-20"
+            key={index}
+          >
+            <h1 className="text-center text-3xl my-13 leading-6 font-light text-indigo-400">
+              Subject: {e.title}
+            </h1>
+            <p className="text-sm text-gray-400 font-light">Tags: {e.tags}</p>
+            <div className=" border border-1 border-fuchsia-800 p-3 rounded-md w-[50%]">
+              <p className=" text-cyan-600 text-lg">{e.describe}</p>
+            </div>
+            <hr className="w-[70%] mt-8" />
           </div>
         ))}
+        <LeaveComment/>
       </div>
     </div>
   );
