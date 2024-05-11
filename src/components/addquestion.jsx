@@ -15,7 +15,7 @@ export default function Addquestion() {
     setTitle("");
     setTags("");
     setDescribe("");
-    setShortDescribe('')
+    setShortDescribe("");
   };
 
   const sendForm = async (e) => {

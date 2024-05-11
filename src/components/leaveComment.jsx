@@ -5,11 +5,10 @@ import Swal from "sweetalert2";
 import Comments from "./comments";
 import { useParams } from "react-router-dom";
 
-
 export default function LeaveComment() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const {id} = useParams()
+  const { id } = useParams();
 
   const d = new Date();
   const getTime = d.getUTCDate();
@@ -17,7 +16,7 @@ export default function LeaveComment() {
   const [date] = useState(getTime);
 
   const sendComment = async (e) => {
-    const doc = { name, comment, date,id };
+    const doc = { name, comment, date, id };
     e.preventDefault();
 
     try {
